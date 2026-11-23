@@ -1,0 +1,251 @@
+{
+  "extensionName": {
+    "message": "ScopePing"
+  },
+  "extensionDescription": {
+    "message": "Compare client messages with locally saved approved scope."
+  },
+  "direction": {
+    "message": "ltr"
+  },
+  "headerSubtitle": {
+    "message": "Manage clients, approved scope, templates, and local backups."
+  },
+  "clientsHeading": {
+    "message": "Clients"
+  },
+  "noClients": {
+    "message": "No clients saved yet."
+  },
+  "newClient": {
+    "message": "New client"
+  },
+  "editClient": {
+    "message": "Edit"
+  },
+  "activeClientName": {
+    "message": "$1 · Active"
+  },
+  "clientNameLabel": {
+    "message": "Client name"
+  },
+  "scopeLabel": {
+    "message": "Approved scope items"
+  },
+  "scopeHelp": {
+    "message": "Enter one agreed deliverable or boundary per line."
+  },
+  "templatePresetLabel": {
+    "message": "Response template"
+  },
+  "customTemplate": {
+    "message": "Custom template"
+  },
+  "templateLabel": {
+    "message": "Template text"
+  },
+  "templateHelp": {
+    "message": "Placeholders: {{clientName}}, {{item}}, and {{price}}."
+  },
+  "thresholdLabel": {
+    "message": "Out-of-scope match threshold"
+  },
+  "thresholdValue": {
+    "message": "$1"
+  },
+  "thresholdHelp": {
+    "message": "Each scope item gets 70% exact-token overlap plus a 30% whole-phrase bonus. A task-like request is flagged only when its best item score is below this value. This is a deterministic suggestion, not a block."
+  },
+  "saveClient": {
+    "message": "Save client"
+  },
+  "deleteClient": {
+    "message": "Delete client"
+  },
+  "deleteConfirm": {
+    "message": "Delete this client and its approved scope from this browser?"
+  },
+  "activeClientSaved": {
+    "message": "Active client updated."
+  },
+  "clientSaved": {
+    "message": "Client and approved scope saved on this device."
+  },
+  "clientDeleted": {
+    "message": "Client deleted."
+  },
+  "operationError": {
+    "message": "Could not complete the change. Check extension storage and try again."
+  },
+  "clientNameRequired": {
+    "message": "Enter a client name before continuing."
+  },
+  "licenseHeading": {
+    "message": "Activate ScopePing"
+  },
+  "licenseInstructions": {
+    "message": "Enter your local license key to start. This temporary check runs only on this device."
+  },
+  "licenseKeyLabel": {
+    "message": "License key"
+  },
+  "activateLicense": {
+    "message": "Activate"
+  },
+  "licenseInvalid": {
+    "message": "Use the format SCP-XXXX-XXXX-XXXX with letters or numbers in each group."
+  },
+  "onboardingStepOne": {
+    "message": "Step 1: Add your client"
+  },
+  "onboardingStepTwo": {
+    "message": "Step 2: Paste the approved scope"
+  },
+  "onboardingStepThree": {
+    "message": "Step 3: You are ready"
+  },
+  "onboardingDoneHelp": {
+    "message": "Your client and approved scope will be stored locally. You can edit them at any time."
+  },
+  "onboardingProgress": {
+    "message": "Step $1 of 3"
+  },
+  "next": {
+    "message": "Next"
+  },
+  "back": {
+    "message": "Back"
+  },
+  "finishSetup": {
+    "message": "Finish setup"
+  },
+  "scopeRequired": {
+    "message": "Enter at least one approved scope item."
+  },
+  "onboardingComplete": {
+    "message": "Setup complete. Choose this client for the conversation you review."
+  },
+  "exportScopes": {
+    "message": "Export JSON backup"
+  },
+  "importScopes": {
+    "message": "Import JSON backup"
+  },
+  "importConfirm": {
+    "message": "Importing replaces all currently saved clients and scopes. Continue?"
+  },
+  "exportComplete": {
+    "message": "Scope backup downloaded."
+  },
+  "importComplete": {
+    "message": "Scope backup restored."
+  },
+  "importInvalid": {
+    "message": "That file is not a valid ScopePing backup."
+  },
+  "importTooLarge": {
+    "message": "The backup file is too large to import."
+  },
+  "panelLabel": {
+    "message": "ScopePing message review"
+  },
+  "siteGmail": {
+    "message": "Gmail"
+  },
+  "siteUpwork": {
+    "message": "Upwork"
+  },
+  "reviewMessageButton": {
+    "message": "Review this message with ScopePing"
+  },
+  "integrationWarning": {
+    "message": "ScopePing could not complete a review on $1. Check the message layout and extension storage."
+  },
+  "siteLayoutWarning": {
+    "message": "ScopePing could not safely review a message on $1. Check the page layout and retry."
+  },
+  "closePanel": {
+    "message": "Close ScopePing panel"
+  },
+  "privacyNotice": {
+    "message": "Local suggestions only · Nothing is sent automatically"
+  },
+  "licenseRequired": {
+    "message": "Activate ScopePing in Options to review messages."
+  },
+  "noActiveClient": {
+    "message": "No active client selected. Choose a client in Options."
+  },
+  "saveScopeFirst": {
+    "message": "Save approved scope in Options before reviewing requests."
+  },
+  "emptyMessage": {
+    "message": "This message has no readable text to review."
+  },
+  "reviewError": {
+    "message": "ScopePing could not review this message. Try again or open Options."
+  },
+  "openOptions": {
+    "message": "Open Options"
+  },
+  "withinScope": {
+    "message": "Within scope"
+  },
+  "possiblyOutOfScope": {
+    "message": "Possibly out of scope"
+  },
+  "matchedScopeLabel": {
+    "message": "Closest approved scope item"
+  },
+  "closestScopeLabel": {
+    "message": "Closest approved scope item"
+  },
+  "noScopeMatch": {
+    "message": "No matching scope item was found."
+  },
+  "scoreExplanation": {
+    "message": "Best match score $1 · review threshold $2"
+  },
+  "longMessageTrimmed": {
+    "message": "This message was long; only its first portion was reviewed."
+  },
+  "extraPriceLabel": {
+    "message": "Optional extra price"
+  },
+  "extraPricePlaceholder": {
+    "message": "e.g. $250"
+  },
+  "draftLabel": {
+    "message": "Editable response draft"
+  },
+  "copyDraft": {
+    "message": "Copy draft"
+  },
+  "priceToAgree": {
+    "message": "a price to be agreed"
+  },
+  "manualSendReminder": {
+    "message": "Draft only. Review and send it yourself."
+  },
+  "copied": {
+    "message": "Copied"
+  },
+  "copyManually": {
+    "message": "Draft selected. Copy it manually."
+  },
+  "clipboardWarning": {
+    "message": "ScopePing could not write to the clipboard. The draft is selected for manual copying."
+  },
+  "templateDefaultName": {
+    "message": "Default"
+  },
+  "templateDefault": {
+    "message": "Thanks, {{clientName}}. I’m happy to take on {{item}} as an extra for {{price}}. Please let me know if you’d like me to proceed."
+  },
+  "templateFriendlyName": {
+    "message": "Friendly and collaborative"
+  },
+  "templateFriendly": {
+    "message": "Happy to help with {{item}}, {{clientName}}. I can add it for {{price}}. Would you like me to prepare an updated estimate?"
+  }
+}

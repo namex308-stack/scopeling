@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="extensionName"></title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <section id="license-gate" class="license-gate" aria-labelledby="license-heading">
+    <h1 id="license-heading" data-i18n="licenseHeading"></h1>
+    <p data-i18n="licenseInstructions"></p>
+    <form id="license-form">
+      <label for="license-key" data-i18n="licenseKeyLabel"></label>
+      <input id="license-key" type="text" autocomplete="off" autocapitalize="characters"
+        spellcheck="false" maxlength="18">
+      <button type="submit" data-i18n="activateLicense"></button>
+      <p id="license-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <div id="application" class="hidden">
+    <header class="page-header">
+      <h1 data-i18n="extensionName"></h1>
+      <p data-i18n="headerSubtitle"></p>
+    </header>
+
+    <section id="onboarding" class="onboarding hidden" aria-live="polite">
+      <p class="step-indicator" id="step-indicator"></p>
+      <section id="step-one" class="onboarding-step">
+        <h2 data-i18n="onboardingStepOne"></h2>
+        <label for="first-client-name" data-i18n="clientNameLabel"></label>
+        <input id="first-client-name" type="text" maxlength="100" autocomplete="organization">
+        <button id="step-one-next" type="button" data-i18n="next"></button>
+      </section>
+      <section id="step-two" class="onboarding-step hidden">
+        <h2 data-i18n="onboardingStepTwo"></h2>
+        <p id="first-client-preview" class="help"></p>
+        <label for="first-client-scope" data-i18n="scopeLabel"></label>
+        <textarea id="first-client-scope" rows="8"></textarea>
+        <p class="help" data-i18n="scopeHelp"></p>
+        <div class="form-actions">
+          <button id="step-two-back" class="secondary" type="button" data-i18n="back"></button>
+          <button id="step-two-next" type="button" data-i18n="next"></button>
+        </div>
+      </section>
+      <section id="step-three" class="onboarding-step hidden">
+        <h2 data-i18n="onboardingStepThree"></h2>
+        <p data-i18n="onboardingDoneHelp"></p>
+        <button id="finish-onboarding" type="button" data-i18n="finishSetup"></button>
+      </section>
+      <p id="onboarding-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <main id="manager" class="hidden">
+      <section class="client-section" aria-labelledby="clients-heading">
+        <div class="section-heading">
+          <h2 id="clients-heading" data-i18n="clientsHeading"></h2>
+          <button id="new-client" class="secondary" type="button" data-i18n="newClient"></button>
+        </div>
+        <div id="client-list" class="client-list"></div>
+        <div class="backup-actions">
+          <button id="export-scopes" class="secondary" type="button" data-i18n="exportScopes"></button>
+          <button id="import-scopes-button" class="secondary" type="button" data-i18n="importScopes"></button>
+          <input id="import-scopes" class="hidden" type="file" accept="application/json,.json">
+        </div>
+        <p id="backup-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="editor-section" aria-labelledby="form-title">
+        <h2 id="form-title" data-i18n="newClient"></h2>
+        <form id="client-form">
+          <input id="client-id" type="hidden">
+          <label for="client-name" data-i18n="clientNameLabel"></label>
+          <input id="client-name" maxlength="100" autocomplete="organization">
+
+          <label for="scope" data-i18n="scopeLabel"></label>
+          <textarea id="scope" rows="7"></textarea>
+          <p class="help" data-i18n="scopeHelp"></p>
+
+          <label for="template-preset" data-i18n="templatePresetLabel"></label>
+          <select id="template-preset"></select>
+          <label for="template" data-i18n="templateLabel"></label>
+          <textarea id="template" rows="5"></textarea>
+          <p class="help" data-i18n="templateHelp"></p>
+
+          <label for="threshold" data-i18n="thresholdLabel"></label>
+          <div class="threshold-row">
+            <input id="threshold" type="range" min="0.10" max="0.80" step="0.05" value="0.35">
+            <output id="threshold-value" for="threshold"></output>
+          </div>
+          <p class="help" data-i18n="thresholdHelp"></p>
+
+          <div class="form-actions">
+            <button type="submit" data-i18n="saveClient"></button>
+            <button id="delete-client" class="danger hidden" type="button" data-i18n="deleteClient"></button>
+          </div>
+          <p id="status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script src="../lib/scopeStore.js"></script>
+  <script src="../lib/templates.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
