@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ScopePing - Upgrade</title>
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<style>
+body{font-family:system-ui,sans-serif;max-width:520px;margin:48px auto;padding:0 16px;text-align:center}
+h1{font-size:24px;margin:0 0 8px}
+p{color:#555}
+button{padding:12px 24px;background:#2563eb;color:#fff;border:none;border-radius:8px;font-size:16px;cursor:pointer;margin-top:20px}
+button:disabled{background:#94a3b8;cursor:not-allowed}
+#status{margin-top:20px;font-size:14px}
+</style>
+</head>
+<body>
+<h1>Upgrade to ScopePing Pro</h1>
+<p>Unlock advanced scope-matching features. Your data stays local.</p>
+<button id="buy-btn">Upgrade now</button>
+<div id="status"></div>
+<script>
+const PADDLE_CLIENT_TOKEN = 'REPLACE_WITH_CLIENT_TOKEN';
+const PADDLE_PRICE_ID = 'REPLACE_WITH_PRICE_ID';
+const PADDLE_ENVIRONMENT = 'sandbox';
+Paddle.Initialize({
+  token: PADDLE_CLIENT_TOKEN,
+  environment: PADDLE_ENVIRONMENT,
+  eventCallback: function (ev) {
+    if (ev.name === 'checkout.completed') {
+      document.getElementById('status').textContent = 'Purchase complete - check your email for the license key.';
+      document.getElementById('buy-btn').disabled = true;
+    }
+  }
+});
+document.getElementById('buy-btn').addEventListener('click', function () {
+  Paddle.Checkout.open({ items: [{ priceId: PADDLE_PRICE_ID, quantity: 1 }] });
+});
+</script>
+</body>
+</html>
