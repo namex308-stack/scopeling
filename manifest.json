@@ -1,69 +1,72 @@
-﻿{
-    "manifest_version":  3,
-    "name":  "__MSG_extensionName__",
-    "description":  "__MSG_extensionDescription__",
-    "version":  "1.1.0",
-    "default_locale":  "en",
-    "permissions":  [
-                        "storage",
-                        "alarms",
-                        "activeTab"
-                    ],
-    "background":  {
-                       "service_worker":  "background.js"
-                   },
-    "action":  {
-                   "default_title":  "__MSG_extensionName__",
-                   "default_popup":  "popup.html"
-               },
-    "options_ui":  {
-                       "page":  "options/options.html",
-                       "open_in_tab":  true
-                   },
-    "content_scripts":  [
-                            {
-                                "matches":  [
-                                                "https://mail.google.com/*"
-                                            ],
-                                "js":  [
-                                           "lib/scopeStore.js",
-                                           "lib/matcher.js",
-                                           "lib/templates.js",
-                                           "content/ui/panel.js",
-                                           "content/message-injector.js",
-                                           "content/gmail.js"
-                                       ],
-                                "run_at":  "document_idle"
-                            },
-                            {
-                                "matches":  [
-                                                "https://upwork.com/*",
-                                                "https://upwork.com/*",
-                                                "https://www.upwork.com/*",
-                                                "https://www.upwork.com/*"
-                                            ],
-                                "js":  [
-                                           "lib/scopeStore.js",
-                                           "lib/matcher.js",
-                                           "lib/templates.js",
-                                           "content/ui/panel.js",
-                                           "content/message-injector.js",
-                                           "content/upwork.js"
-                                       ],
-                                "run_at":  "document_idle"
-                            }
-                        ],
-    "web_accessible_resources":  [
-                                     {
-                                         "resources":  [
-                                                           "content/ui/panel.css"
-                                                       ],
-                                         "matches":  [
-                                                         "https://mail.google.com/*",
-                                                         "https://upwork.com/*",
-                                                         "https://www.upwork.com/*"
-                                                     ]
-                                     }
-                                 ],
-    "host_permissions":  "https://api.paddle.com/*https://*.paddle.com/*"
+{
+  "manifest_version": 3,
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+  "version": "1.1.0",
+  "default_locale": "en",
+  "permissions": [
+    "storage",
+    "alarms",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "__MSG_extensionName__",
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "lib/scopeStore.js",
+        "lib/matcher.js",
+        "lib/templates.js",
+        "content/ui/panel.js",
+        "content/message-injector.js",
+        "content/gmail.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://upwork.com/*",
+        "https://www.upwork.com/*"
+      ],
+      "js": [
+        "lib/scopeStore.js",
+        "lib/matcher.js",
+        "lib/templates.js",
+        "content/ui/panel.js",
+        "content/message-injector.js",
+        "content/upwork.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content/ui/panel.css"
+      ],
+      "matches": [
+        "https://mail.google.com/*",
+        "https://upwork.com/*",
+        "https://www.upwork.com/*"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://upwork.com/*",
+    "https://www.upwork.com/*",
+    "https://api.paddle.com/*"
+  ]
 }
