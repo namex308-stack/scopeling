@@ -1,4 +1,4 @@
-# ScopePing
+# scopeling
 
 **A private, local-first scope checker for client messages.**
 
