@@ -1,18 +1,15 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>ScopePing - Settings</title>
+<title>scopeling - Settings</title>
 <style>
 body{font-family:system-ui,sans-serif;max-width:560px;margin:32px auto;padding:0 16px;color:#1a1a1a}
-h1{font-size:20px;margin:0 0 8px}
-h2{font-size:15px;margin:24px 0 8px;color:#444}
-.row{margin:12px 0}
-label{display:block;font-size:13px;color:#555;margin-bottom:4px}
+h1{font-size:20px;margin:0 0 8px}h2{font-size:15px;margin:24px 0 8px;color:#444}
+.row{margin:12px 0}label{display:block;font-size:13px;color:#555;margin-bottom:4px}
 input[type=text]{width:100%;padding:8px 10px;border:1px solid #ccc;border-radius:6px;font-size:14px;box-sizing:border-box}
 button{padding:8px 14px;border:1px solid #2563eb;background:#2563eb;color:#fff;border-radius:6px;cursor:pointer;font-size:14px;margin-right:6px}
-button.secondary{background:#fff;color:#2563eb}
-button.danger{background:#fff;color:#dc2626;border-color:#dc2626}
+button.secondary{background:#fff;color:#2563eb}button.danger{background:#fff;color:#dc2626;border-color:#dc2626}
 button:disabled{opacity:.5;cursor:not-allowed}
 .status{padding:12px;border-radius:6px;margin:12px 0;font-size:14px}
 .status.pro{background:#ecfdf5;color:#065f46;border:1px solid #10b981}
@@ -21,18 +18,18 @@ button:disabled{opacity:.5;cursor:not-allowed}
 </style>
 </head>
 <body>
-<h1>ScopePing Settings</h1>
-<h2>License</h2>
-<div id="status-box" class="status free">Free</div>
+<h1>scopeling Settings</h1>
+<h2>License Status</h2>
+<div id="status-box" class="status free">Free Version</div>
 <div class="row">
 <label for="license-input">License key</label>
-<input type="text" id="license-input" placeholder="Enter your license key" autocomplete="off" spellcheck="false">
-<div class="muted">Paste the key you received after purchase. It will be verified with Paddle.</div>
+<input type="text" id="license-input" placeholder="Enter your Paddle license key" autocomplete="off" spellcheck="false">
+<div class="muted">Paste the key you received after purchase to unlock Pro features.</div>
 </div>
 <div class="row">
 <button id="activate-btn">Activate</button>
 <button id="deactivate-btn" class="danger" hidden>Deactivate</button>
-<button id="upgrade-btn" class="secondary">Upgrade to Pro</button>
+<button id="upgrade-btn" class="secondary">Upgrade to Pro ($29)</button>
 </div>
 <div id="message-box" class="muted" style="margin-top:12px"></div>
 <script src="lib/license.js"></script>

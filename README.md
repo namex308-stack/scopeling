@@ -2,9 +2,9 @@
 
 **A private, local-first scope checker for client messages.**
 
-ScopePing is a dependency-free Chrome and Edge Manifest V3 extension for reviewing messages in Gmail and Upwork against scope you have already agreed with each client. It helps you spot requests that may need a conversation before you commit to extra work.
+scopeling is a dependency-free Chrome and Edge Manifest V3 extension for reviewing messages in Gmail and Upwork against scope you have already agreed with each client. It helps you spot requests that may need a conversation before you commit to extra work.
 
-> ScopePing makes suggestions, not decisions. It never blocks or sends a message.
+> scopeling makes suggestions, not decisions. It never blocks or sends a message.
 
 ## What it does
 
@@ -13,16 +13,16 @@ ScopePing is a dependency-free Chrome and Edge Manifest V3 extension for reviewi
 - Show whether a request looks within scope or possibly out of scope, along with the closest matching scope item.
 - Prepare an editable response draft from a template; you decide whether to copy, edit, and send it.
 - Manage multiple clients, scope lists, response templates, and JSON backups in extension Options.
-- Keep review data on your device. ScopePing does not send message text to a server or use analytics.
+- Keep review data on your device. scopeling does not send message text to a server or use analytics.
 
 ## Install for development
 
 1. Download or clone this repository.
 2. Open `chrome://extensions` in Chrome or `edge://extensions` in Edge.
 3. Turn on **Developer mode**, choose **Load unpacked**, and select the repository folder.
-4. Open ScopePing's **Options** page and complete the short onboarding flow.
+4. Open scopeling's **Options** page and complete the short onboarding flow.
 5. Save a client and its agreed scope, then choose that client before reviewing a conversation.
-6. On a supported message, click the ScopePing shield to see a local review and optional draft.
+6. On a supported message, click the scopeling shield to see a local review and optional draft.
 
 ## Important: license gate is a placeholder
 
@@ -30,7 +30,7 @@ The current first-run gate accepts any key in the format `SCP-XXXX-XXXX-XXXX`. I
 
 ## Privacy and permissions
 
-ScopePing is designed to work locally:
+scopeling is designed to work locally:
 
 - Client names, approved scope, templates, the activation flag, and badge state use `chrome.storage.local`.
 - Message text is inspected in the page only after you click the review control; it is not sent to an external service or saved by the service worker.
@@ -42,12 +42,12 @@ ScopePing is designed to work locally:
 
 Matching is deterministic and intended as a helpful prompt, not a substitute for reading the conversation or agreement:
 
-1. ScopePing splits the reviewed text into sentences and checks for task-like request wording.
+1. scopeling splits the reviewed text into sentences and checks for task-like request wording.
 2. For each sentence and approved scope item, it scores exact token overlap (70%) and a whole-phrase match bonus (30%).
 3. A task-like sentence is labeled **Possibly out of scope** only when its best scope-item score is below the client's threshold.
 4. Long messages are bounded before analysis. Empty text and missing scope receive their own status.
 
-The threshold is adjustable per client. ScopePing does not block messages or take action on your behalf.
+The threshold is adjustable per client. scopeling does not block messages or take action on your behalf.
 
 ## Development
 
