@@ -6,3 +6,6 @@ Thumbs.db
 *.bak
 FIX_PROMPT.md
 .env
+.env
+.env.local
+.env.*.local

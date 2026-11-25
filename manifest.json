@@ -68,12 +68,6 @@
       ]
     }
   ],
-  "host_permissions": [
-    "https://mail.google.com/*",
-    "https://upwork.com/*",
-    "https://www.upwork.com/*",
-    "https://api.paddle.com/*"
-  ],
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",

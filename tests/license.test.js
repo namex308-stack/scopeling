@@ -1,4 +1,4 @@
-﻿const test = require('node:test');
+const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -67,14 +67,14 @@ test('activateLicense active stores flag and detail', async () => {
   const lic = loadModule(f, st);
   const r = await lic.activateLicense('SCP-AAA-BBB-CCC');
   assert.equal(r.ok, true);
-  assert.equal(st._data.scopeping_license_flag, true);
+  assert.equal(st._data.licensed, true);
   assert.equal(st._data.scopeping_license_detail.licenseKey, 'SCP-AAA-BBB-CCC');
 });
 
 test('deactivateLicense clears both keys', async () => {
-  const st = makeStorage({ scopeping_license_flag: true, scopeping_license_detail: { licenseKey: 'x' } });
+  const st = makeStorage({ licensed: true, scopeping_license_detail: { licenseKey: 'x' } });
   const lic = loadModule(async () => ({ ok: true, json: async () => ({}) }), st);
   await lic.deactivateLicense();
-  assert.equal(st._data.scopeping_license_flag, undefined);
+  assert.equal(st._data.licensed, undefined);
   assert.equal(st._data.scopeping_license_detail, undefined);
 });

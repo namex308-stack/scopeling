@@ -160,12 +160,12 @@ function updateBadge(count, done) {
 // --- License status bridge (appended by setup) ---
 chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
   if (!msg || msg.type !== 'GET_LICENSE_STATUS') return false;
-  chrome.storage.local.get(['scopeping_license_flag', 'scopeping_license_detail'])
+  chrome.storage.local.get(['licensed', 'scopeping_license_detail'])
     .then((got) => {
       sendResponse({
         ok: true,
         status: {
-          isPro: got['scopeping_license_flag'] === true,
+          isPro: got['licensed'] === true,
           detail: got['scopeping_license_detail'] || null
         }
       });
